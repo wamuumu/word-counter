@@ -1,6 +1,6 @@
 DOCKER TIPS
 
-First of all, setup a docker network for IPC
+First of all, setup a docker network for IPC via socket
 
 docker network create "name_of_the_net"
 
@@ -8,7 +8,7 @@ Running the command docker network list, you should see "name_of_the_net" as an 
 
 To build:
 - inside container directory, run: docker build -t name .
-- running docker images, you'll see your just built image
+- if you want to see your just built image, run: docker images 
 
 To run an image:
 - docker run -d --name "name" --net "net" -p port:port image params
