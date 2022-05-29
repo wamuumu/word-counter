@@ -15,7 +15,7 @@ To run an image:
 
 -d: detach mode, run container in background
 
-e.g. docker run -d --rm --name monitor --net word_counterNET -p 5000:5000 monitor param1 param2 ...
+e.g. docker run -d --name monitor --net word_counterNET -p 5000:5000 monitor param1 param2 ...
 
 To see running containers:
 - docker ps
