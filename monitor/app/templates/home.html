@@ -1,0 +1,39 @@
+<!doctype html>
+
+<html lang="en-us">   
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/word_counter.css') }}">
+    <script type="text/javascript" src= "{{ url_for('static',filename='scripts/word_counter.js') }}"></script>
+    <title>Word Counter</title>
+  </head>
+  
+  <body>
+    <center>
+      <h1>Top 10 Words</h1>
+      <table id="words">
+        <tr>
+          <th>#</th>
+          <th>Word</th>
+          <th>Count</th>
+          <th>Occurrences</th>
+        </tr>
+        {%for i in range(0, words|length)%}
+          <tr>
+            <td>{{ i+1 }}</td>
+            <td>{{ words[i]["word"] }}</td>
+            <td>{{ words[i]["count"] }}</td>
+            <td>
+              <ul>
+                {%for j in range(0, words[i]["occurrences"]|length)%}
+                  <li>{{ words[i]["occurrences"][j] }}</li>
+                {%endfor%}
+              </ul>
+            </td>
+          </tr>
+        {%endfor%}
+      </table>
+    </center>
+  </body> 
+</html>
